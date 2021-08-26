@@ -1,0 +1,23 @@
+Input: 123
+OUTPUT:  ODD 2
+         EVEN 1
+         
+        
+#include<stdio.h>
+int main()
+{
+int n,odd=0,even=0;
+scanf("%d",&n);
+while(n)
+{
+int rem=n%10;
+if(rem%2!=0)
+odd++;
+else
+even++;
+n=n/10;
+}
+printf("ODD %d",odd);
+printf("EVEN %d",even);
+return 0;
+}
