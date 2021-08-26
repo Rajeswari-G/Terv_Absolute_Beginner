@@ -1,0 +1,22 @@
+Input: 121
+Output: Yes
+
+#include<stdio.h>
+int main()
+{
+int a,n,m,rem;
+scanf("%d",&n);
+m=n;
+a=0;
+while(n)
+{
+rem=n%10;
+a=a*10+rem;
+n=n/10;
+}
+if(m==a)
+printf("Yes");
+else
+printf("No");
+return 0;
+}
