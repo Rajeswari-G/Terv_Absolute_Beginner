@@ -1,0 +1,29 @@
+ #include<stdio.h>
+ int gcd(int ,int);
+ int main() 
+{ 
+    int p, q; 
+    scanf("%d %d",&p,&q);
+    gcd(p,q);
+    printf(" %d",gcd(p, q)); 
+    return 0; 
+}
+int gcd(int p, int q) 
+ { 
+
+   
+    if (p == 0) 
+       return q; 
+  
+    if (q == 0) 
+       return p; 
+
+    if (p == q) 
+      return p; 
+      
+    if (p > q) 
+        return gcd(p-q, q);   
+
+    else
+        return gcd(p, q-p); 
+ } 
