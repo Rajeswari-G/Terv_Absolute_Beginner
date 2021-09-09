@@ -1,0 +1,29 @@
+Sample input: helloworld
+Sample Output: l
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char a[100];
+int i,j,max;
+scanf("%s",a);
+for(i=0;a[i];i++)
+{
+    max=1;
+    for(j=i+1;s[j];j++)
+   {
+         if(a[i]==a[j])
+         {
+              max++;
+          }
+   }
+   if(max>1)
+   {
+      printf("%c",s[i]);
+      break;
+   }
+ }
+ return 0;
+ }
+  
