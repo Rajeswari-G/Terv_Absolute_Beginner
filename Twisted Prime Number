@@ -1,0 +1,42 @@
+Input : 41
+Output: Not Twisted Prime Number
+A number is said to be a twisted prime number if it is a prime number and reverse of the number is also a prime number.
+
+#include<stdio.h>
+int main()
+{
+int n,k=0,count=0,a,sum=0,r;
+scanf("%d",&n);
+// Find the prime number
+for(int i=1;i<=n;i++)
+{
+  if(n%i==0)
+  count++;
+}
+//If it is a prime number
+if(count==2)
+{
+  a=n;
+  // reverse a number
+  while(a)
+  {
+   r=a%10;
+   sum=sum*10+r;
+   a=a/10;
+  }
+  //check the reverse numbered prime number or not
+  for(i=1;i<=sum;i++)
+  {
+    if(sum%i==0)
+    k++;
+  }
+  if(k==2)
+  printf("Twisted Prime Number");
+  else
+  printf("Not Twisted Prime Number");
+ }
+ 
+ else
+ printf("Not Twisted Prime Number");
+ return 0;
+ }
