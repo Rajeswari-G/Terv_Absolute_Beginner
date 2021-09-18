@@ -1,0 +1,35 @@
+Two numbers are said to be amicable if each number is the sum of the proper divisors of the other.
+Input : 220 284 
+Output : Yes
+
+
+#include<stdio.h>
+int main()
+{
+ int a,b,sum1=0,sum2=0,i;
+ scanf("%d %d ",&a,&b);
+ // find the a divisors and add it 
+ for(i=1;i<a;i++)
+ {
+   if(a%i==0)
+   {
+     sum1+=i;
+    }
+ }
+ 
+ // find b divisors and add it 
+ for(i=1;i<b;i++)
+ {
+   if(b%i==0)
+   {
+     sum2+=i;
+   }
+ }
+ 
+ // a== sum of the divisiors of b && b==sum of the divisors of a -> it is a amicable number
+ if(a==sum2 && b==sum1)
+ printf("Yes");
+ else
+ printf("No");
+ return 0;
+ }
