@@ -1,0 +1,65 @@
+INput: 6 4 
+       1 2 4 5 4 4
+       1 2 7 5 
+Output: 1 2 4 5 7 
+
+
+
+#include<stdio.h>
+int main()
+{
+int a[100],b[100],c[100];
+int i,j,n,m,htemp;
+scanf("%d %d",&n,&m);
+
+// store the values in a&b array and copy it 
+for(i=0;i<n;i++)
+{
+  scanf("%d",&a[i]);
+  c[i]=a[i];
+}
+for(j=0;j<m;j++,i++)
+{
+ scanf("%d",&b[j]);
+ c[i]=b[j];
+ }
+ 
+ //sort the array 
+ for(i=0;i<n+m;i++)
+ {
+   for(j=0;j<n+m;j++)
+   {
+     if(c[i]<c[j])
+     {
+       temp=c[i];
+       c[i]=a[j];
+       c[j]=temp;
+     }
+   }
+ }
+ 
+ //remove the duplicates
+ h=n+m;
+ for(i=0;i<h;i++)
+ {
+   if(c[i]==c[i+1])
+   {
+     for(int k=i+1;k<h;k++)
+     {
+       c[k]=c[k+1];
+     }
+     h--;
+     i--;
+    }
+  }
+  
+  //print the array 
+  for(i=0;i<h;i++)
+  {
+    printf("%d ",&a[i]);
+  }
+  return 0;
+ }
+      
+  
+ 
