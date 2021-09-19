@@ -1,0 +1,27 @@
+Input : 8 10 
+Output: 9
+
+
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a,b,n,i,sum,rem;
+	scanf("%d %d",&a,&b);
+	for(i=a;i<=b;i++)
+	{
+		n=i*i;
+		sum=0;
+		while(n!=0)
+		{
+			rem=n%10;
+			sum+=rem;
+			n=n/10;
+		}
+		if(i==sum)
+		printf("%d ",i);
+	}
+	getch();
+	return 0;
+}
