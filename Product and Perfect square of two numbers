@@ -1,0 +1,21 @@
+Given two numbers N,M,find their product and check whether it is a perfect square.Print 'Yes' if it is ,otherwise print 'No'.
+
+Input : 5 5
+Output: Yes
+
+
+#include<stdio.h>
+int main()
+{
+int a,b,p,s;
+scanf("%d %d",&a,&b);
+p=a*b;
+s=a*a;
+if(p==s)
+printf("Yes");
+else
+printf("No");
+return 0;
+}
+
+
