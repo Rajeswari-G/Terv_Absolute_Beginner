@@ -1,0 +1,45 @@
+Write a program to check if the given number is a disarium number.
+Input: 175
+Output: Yes
+1^1+ 7^2 + 5^3= 1+49+125 = 175 
+
+
+#include <stdio.h>
+#include<math.h>
+int square(int , int);
+int main()
+{
+    int n,count=0,m,k,rem,ans=0,a;
+    scanf("%d",&n);
+    m=n;
+    a=n;
+    while(n!=0)
+    {
+        count++;
+        n=n/10;
+    }
+    for(k=count;m!=0 && k>0;k--)
+    {
+        rem=m%10;
+        ans=ans+square(rem,k);
+        m=m/10;
+    }
+    if(a==ans)
+    {
+        printf("Yes");
+    }
+    else
+    printf("No");
+    return 0;
+}
+
+int square(int c,int d)
+{
+    int i,s=1;
+    for(i=1;i<=d;i++)
+    {
+        s=s*c;
+    }
+    printf("%d ",s);
+    return s;
+}
