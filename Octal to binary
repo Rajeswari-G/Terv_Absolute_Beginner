@@ -1,0 +1,46 @@
+Input : 12
+Output: 1010
+
+12= 1 x 8^1 + 2 x 8^0
+  = 8+2
+  =10 
+Convert into binary 
+10= 1010
+
+
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+int convert(int );
+int main()
+{
+	int n;
+	printf("Enter the number:");
+	scanf("%d",&n);
+	printf("Decimal:%d",convert(n));
+	getch();
+	return 0;
+}
+int convert(int n)
+{
+	int b=0,rem,i=1;
+	int x,j=1;
+	// convert into octal
+	while(n!=0)
+	{
+		rem=n%10;
+		n/=10;
+		b+=rem*i;
+		i*=8;
+	}
+	// Octal to Binary
+	while(b!=0)
+	{
+		rem=b%2;
+		b=b/2;
+		x=x+rem*j;
+		j=j*10;
+		
+	}
+	return x;
+}
