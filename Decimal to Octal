@@ -1,0 +1,29 @@
+Input : 12
+Output : 14
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+int convert(int );
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	printf("OCTAL:%d",convert(n));
+	getch();
+	return 0;
+}
+int convert(int n)
+{
+	int b=0,rem,i=1;
+	while(n!=0)
+	{
+		rem=n%8;
+		n/=8;
+		b+=rem*i;
+		i*=10;
+	}
+	return b;
+}
